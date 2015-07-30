@@ -22,9 +22,6 @@
             "override": {
                 "virtualbox-iso": {
                     "execute_command": "echo 'vagrant'|sudo -S bash '{{.Path}}'"
-                },
-                "vmware-iso": {
-                    "execute_command": "echo 'vagrant'|sudo -S bash '{{.Path}}'"
                 }
             }
         }
@@ -37,60 +34,28 @@
             "iso_checksum": "5728ef4b431d28a2d4ad62dbdf5bf36d",
             "iso_checksum_type": "md5",
             "boot_command": [
-                "<esc>",
+                "<esc><esc>",
                 "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/anaconda-ks.cfg",
                 "<enter>"
             ],
             "headless": true,
-            "boot_wait": "10s",
+            "boot_wait": "15s",
             "disk_size": 20480,
             "http_directory": "http",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
             "ssh_port": 22,
+            "ssh_pty" : true,
             "ssh_wait_timeout": "10000s",
             "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S bash 'shutdown.sh'",
             "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
             "virtualbox_version_file": ".vbox_version"
-        },
-        {
-            "type": "vmware-iso",
-            "boot_command": [
-                "<esc>",
-                "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/anaconda-ks.cfg",
-                "<enter>"
-            ],
-            "boot_wait": "10s",
-            "disk_size": 20480,
-            "guest_os_type": "Oracle-64",
-            "headless": true,
-            "http_directory": "http",
-            "iso_url": "http://ftp.heanet.ie/mirrors/oracle-linux/OL7/u1/x86_64/OracleLinux-R7-U1-Server-x86_64-dvd.iso",
-            "iso_checksum": "5728ef4b431d28a2d4ad62dbdf5bf36d",
-            "iso_checksum_type": "md5",
-            "skip_compaction": true,
-            "ssh_username": "vagrant",
-            "ssh_password": "vagrant",
-            "ssh_port": 22,
-            "ssh_wait_timeout": "10000s",
-            "shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S bash 'shutdown.sh'",
-            "tools_upload_flavor": "linux"
         }
     ],
     "post-processors": [
         [{
             "type": "vagrant",
             "keep_input_artifact": false
-        },
-        {
-            "type": "atlas",
-            "only": ["vmware-iso"],
-            "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "vmware_desktop",
-                "version": "0.0.2"
-            }
         },
         {
             "type": "atlas",

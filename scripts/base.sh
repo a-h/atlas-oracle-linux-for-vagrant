@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update the box
-apt-get -y update >/dev/null
+yum -y update >/dev/null
 
 # Tweak sshd to prevent DNS resolution (speed up logins)
 echo 'UseDNS no' >> /etc/ssh/sshd_config

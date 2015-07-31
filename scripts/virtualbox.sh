@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yum install bzip2
 mkdir -p /mnt/virtualbox
 mount -o loop /home/vagrant/VBoxGuest*.iso /mnt/virtualbox
 sh /mnt/virtualbox/VBoxLinuxAdditions.run

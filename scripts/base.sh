@@ -7,6 +7,6 @@ yum -y update >/dev/null
 echo 'UseDNS no' >> /etc/ssh/sshd_config
 
 # Remove 5s grub timeout to speed up booting
-sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
-
-update-grub
+# Work out how to do this on Redhat later.
+# sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+# grub2-mkconfig -o /boot/grub2/grub.cfg

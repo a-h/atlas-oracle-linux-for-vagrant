@@ -1,6 +1,7 @@
 #!/bin/bash
 
 yum -y install bzip2
+yum -y install kernel-uek-devel
 mkdir -p /mnt/virtualbox
 mount -o loop /home/vagrant/VBoxGuest*.iso /mnt/virtualbox
 sh /mnt/virtualbox/VBoxLinuxAdditions.run

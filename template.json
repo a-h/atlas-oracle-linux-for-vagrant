@@ -63,7 +63,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "version": "0.0.7"
+                "version": "0.0.9"
             }
         }]
     ]

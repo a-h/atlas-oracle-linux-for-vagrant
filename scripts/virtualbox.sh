@@ -10,3 +10,4 @@ sh /mnt/virtualbox/VBoxLinuxAdditions.run
 ln -s /opt/VBoxGuestAdditions-*/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
 umount /mnt/virtualbox
 rm -rf /home/vagrant/VBoxGuest*.iso
+/etc/init.d/vboxadd setup

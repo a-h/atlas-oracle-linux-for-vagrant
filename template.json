@@ -12,6 +12,7 @@
             "type": "shell",
             "scripts": [
                 "scripts/base.sh",
+                "scripts/virtualbox_dependencies.sh",
                 "scripts/virtualbox.sh",
                 "scripts/vagrant.sh",
                 "scripts/dep.sh",

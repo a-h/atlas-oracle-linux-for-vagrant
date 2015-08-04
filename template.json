@@ -11,12 +11,11 @@
         {
             "type": "shell",
             "scripts": [
-                "scripts/base.sh",
-                "scripts/virtualbox_dependencies.sh",
-                "scripts/virtualbox.sh",
-                "scripts/vagrant.sh",
-                "scripts/dep.sh",
-                "scripts/zerodisk.sh"
+                "scripts/01_base.sh",
+                "scripts/02_virtualbox.sh",
+                "scripts/03_vagrant.sh",
+                "scripts/04_dep.sh",
+                "scripts/05_zerodisk.sh"
             ],
             "override": {
                 "virtualbox-iso": {
@@ -62,8 +61,7 @@
             "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
             "artifact_type": "vagrant.box",
             "metadata": {
-                "provider": "virtualbox",
-                "version": "0.1.0"
+                "provider": "virtualbox"
             }
         }]
     ]

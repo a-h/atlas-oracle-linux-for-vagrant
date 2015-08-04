@@ -1,10 +1,8 @@
 #!/bin/bash
 
 # Install virtualbox dependencies.
-yum -y install bzip2
-yum -y install kernel-uek-devel
-yum -y install kernel-uek-devel-3.8.13-55.1.6.el7uek.x86_64
-yum -y install kernel-devel
+# yum -y install bzip2
+# yum -y install gcc kernel-uek-devel-$(uname -r)
 
 mkdir -p /mnt/virtualbox
 mount -o loop /home/vagrant/VBoxGuest*.iso /mnt/virtualbox

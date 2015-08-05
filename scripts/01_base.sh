@@ -16,3 +16,7 @@ echo 'UseDNS no' >> /etc/ssh/sshd_config
 
 # Setup the yum proxy.
 # echo 'proxy=10.0.2.2:3128' >> yum.conf
+
+yum -y update >/dev/null
+reboot
+sleep 60
